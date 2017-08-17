@@ -162,6 +162,10 @@ module Spotify
       run(:get, "/v1/artists/#{artist_id}/albums", [200])
     end
 
+    def category_playlists(category_id, params=nil)
+      run(:get, "/v1/browse/categories/#{category_id}/playlists", [200], params)
+    end
+
     def featured_playlists(params=nil)
     	params = {} if params.nil?
     	run(:get, "/v1/browse/featured-playlists", [200], params)
